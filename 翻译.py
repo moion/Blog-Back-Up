@@ -1,3 +1,7 @@
+# name: Leon
+#Data: 2019.4
+
+
 import requests
 import random
 import hashlib
@@ -6,7 +10,7 @@ from PIL import Image
 import pytesseract
 from urllib.parse import quote
 
-
+#语言字典
 language = {
     '自动检测': 'auto',
     '中文': 'zh',
@@ -39,15 +43,16 @@ language = {
     '越南语': 'vie'
 }
 
+#百度翻译API接口
 appid = '20190426000291981'             # API
 secretKey = 'sJldvBzBI78Pg3aK6_l4'      # 密钥
 
-
+#tesseract 提取图片文字
 def get_text(path):
     text = pytesseract.image_to_string(Image.open(path))
     return text
 
-
+#发送请求
 def get_an(x):
 
     header = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like G'
